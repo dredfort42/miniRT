@@ -1,0 +1,69 @@
+# MAIN
+MAIN			=	main.c error_exit.c
+# end MAIN
+
+# PARSER
+PARSER_DIR		=	parser
+PARSER			=	$(addprefix $(PARSER_DIR)/, \
+					parsing_scene.c \
+        			parsing_scene_objects.c \
+       				parsing_scene_properties.c \
+       				scene_inits.c \
+       				scene_preparation.c \
+       				scene_rotation.c \
+       				scene_utilities.c \
+        			utilities.c \
+        			utilities_atoi_atof.c \
+        			utilities_color.c \
+        			utilities_rotation.c \
+        			utilities_string.c)
+# end PARSER
+
+# VECTORS
+VECTOR_DIR		=	vectors
+VECTORS			=	$(addprefix $(VECTOR_DIR)/, \
+					vectors.c \
+					vectors_operations.c \
+					vector_rotation.c)
+# end VECTORS
+
+# OBJECTS
+OBJECT_DIR		=	objects
+OBJECTS			=	$(addprefix $(OBJECT_DIR)/, \
+					object_intersection.c \
+					cylinder.c \
+					cylinder_caps.c \
+					plane.c \
+					sphere.c \
+					cone.c)
+# end OBJECTS
+
+# GRAPHICS
+GRAPHICS_DIR		=	graphics
+GRAPHICS			=	$(addprefix $(GRAPHICS_DIR)/, \
+					colors.c \
+					colors2.c \
+					ray_tracing.c \
+					draw_pixels.c \
+					graphic_layer.c \
+					light.c \
+					checkerboard.c \
+					pattern.c)
+# end GRAPHICS
+
+# HOOKS
+HOOK_DIR		=	hooks
+HOOKS			=	$(addprefix $(HOOK_DIR)/, \
+					register_hooks.c \
+					object_selection.c \
+					exit.c \
+					move_utilities.c \
+					move_qe.c \
+					move_wasd.c \
+					rotation_utilities.c \
+					rotation.c \
+					change_settings.c \
+					pattern_settings.c)
+# end HOOKS
+
+SRCS			=	$(MAIN) $(PARSER) $(VECTORS) $(OBJECTS) $(HOOKS) $(GRAPHICS)
